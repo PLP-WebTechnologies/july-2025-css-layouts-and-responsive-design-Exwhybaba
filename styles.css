@@ -1,0 +1,741 @@
+
+/* Modern, appealing button styles */
+button, .btn {
+    background: linear-gradient(90deg, #D4A373 0%, #B68B4C 100%);
+    color: #2C1810;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.1s, box-shadow 0.2s;
+    outline: none;
+    margin: 0.3em 0.5em 0.3em 0;
+    letter-spacing: 0.03em;
+}
+button:hover, .btn:hover, button:focus, .btn:focus {
+    background: linear-gradient(90deg, #B68B4C 0%, #D4A373 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+/* Flipping image effect for gallery */
+.gallery {
+    perspective: 1000px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.gallery img, .gallery figcaption {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+.gallery img {
+    z-index: 2;
+    transition: transform 0.6s;
+}
+.gallery figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6F4E37;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 1rem;
+    transform: rotateY(180deg);
+    z-index: 1;
+    transition: transform 0.6s;
+}
+.gallery:hover img {
+    transform: rotateY(180deg);
+}
+.gallery:hover figcaption {
+    transform: rotateY(0deg);
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "hero sidebar"
+        "favorites favorites"
+        "main main"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 350px auto 1fr auto;
+    min-height: 100vh;
+    gap: 1rem;
+}
+
+.site-header {
+    grid-area: header;
+    background-color: #2C1810; 
+    color: #ffffff;            
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: #6F4E37;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    color: #ffffff;
+}
+
+
+.hero-content {
+    padding-left: 1.5rem;
+}
+
+.hero-content .user-actions button{
+    background-color: #D4A373;
+}
+
+.hero-content h1{
+    font-size: 2rem;
+    margin-right: -6rem;
+    margin-bottom: 1rem;
+
+}
+
+.hero-content .user-actions {
+    display: inline-flex;
+    justify-items: space-between;
+    gap: 1rem;
+}
+
+.hero-content a{
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.favorites {
+    grid-area: favorites;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F5E6D3;
+    color: #2C1810;
+    padding: 1rem 0;
+}
+
+.user-menu a{
+    color: #113273;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    
+}
+
+#menu{
+    display: block;
+    justify-items: center;
+}
+
+
+.main-content {
+    grid-area: main;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.menu, .all-cate h3 {
+    color: #6F4E37;
+    
+}
+
+.menu, .all-cate p {
+    color: #2C1810;
+
+}
+
+#about {
+    background-color: #DCC7AA;
+    color: #2C1810;
+    width: 100%;
+}
+
+#about h2 h3 {
+    color: #6F4E37;
+}
+
+#about p {
+    color: #2C1810;
+}
+
+#gallery{
+    background-color: #ffffff;
+    color: #2C1810;
+
+}
+
+figcaption {
+    color: #6F4E37;
+    font-style: italic;
+}
+
+#event {
+    background-color: #F5E6D3;
+    color: #2C1810;
+}
+
+#event h2 h3 {
+    color: #6F4E37;
+
+}
+
+.btn{
+    background-color: #D4A373;
+}
+
+
+#testimonials {
+    background-color: #4B2E2B;
+    color: #ffffff;
+}
+
+#testimonials blockquote {
+    color: #D4A373;
+
+}
+
+
+#shop{
+    background-color: #B68B4C;
+    color:#ffffff;
+}
+
+
+.product {
+    background-color: #FFFFFF;
+    color: #2C1810;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+}
+
+.product .btn {
+    background-color: #4B2E2B;
+    color: #ffffff;
+}
+
+
+
+
+#contact {
+    background-color: #2C1810;
+    color: #F5E6D3;
+}
+
+form input{
+    background-color: white;
+    border: 1px solid #B68B4C;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+form button{
+    background-color: #D4A373;
+}
+
+
+
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.site-footer {
+    grid-area: footer;
+    background: #2C1810;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.site-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: -80px;
+    margin-right: 10px;
+    color: #f0f0f0;
+}
+
+.site-nav a{
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+.site-nav .order-now a{
+    color: #113273;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+.order-now{
+    background: #D4A373;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    box-shadow: rgb(14, 10, 10);
+    cursor: pointer;
+}
+
+.order-now a{
+    color: #113273;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+.logo {
+    display: inline-flex;
+    justify-items: flex-start;
+    gap: 0.5rem;
+    
+    
+}
+
+.logo h1{
+    margin-top: 30px;
+    color: #f0f0f0;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.microscopy{
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    margin-right:320px;
+}
+
+.all-cate{
+    display: flex;
+    justify-items: flex-start;
+    justify-content: space-around;
+    
+}
+
+.micro-allegy{
+    display: block;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+
+
+
+.our-story {
+    display: block;
+    text-align: center;
+}
+
+.story-con, .all-events {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 2rem;
+}
+
+.shop-intro {
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-items: flex-start;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.product{
+    width: 25%;
+    border: 1px solid #B68B4C;
+    border-radius: 10px;
+    box-shadow: #f0f0f0;
+}
+
+.product h3, p{
+    text-align: center;
+}
+
+.product a{
+    display: flex;
+    justify-content: center;
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event a{
+    display: flex;
+    justify-content: center;
+    width: 5rem;
+    margin-left: 2px;
+    margin-right: auto;
+}
+
+.testimonials{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 1rem;
+}
+
+.story-con { 
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    
+}
+
+.our-story p{
+    padding: 0 2rem;
+}
+.story-con p {
+    text-align: left;
+}
+
+
+
+.story-con h3, h4 {
+    text-align: center;
+}
+
+.all-events{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+#gallery h2, #events h2, #testimonials h2 {
+    text-align: center;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+}
+.gallery-grid .gallery {
+    width: 90%;
+    height: 90%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+small{
+    font-size: 0.875rem;
+    color: #888888;
+}
+/* Ensure gallery images fill their cell and are cropped to a square */
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.shop-intro h2, .shop-intro p {
+    text-align: center;
+}
+
+.in-touch {
+    text-align: center;
+}
+
+
+.all-contact{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info p {
+    margin: 0;
+    flex: unset;
+    width: auto;
+}
+.contact-info .btn {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+.contact-box form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+
+.contact-box form label[for="name"] {
+    grid-row: 1;
+    grid-column: 1;
+}
+.contact-box form label[for="email"] {
+    grid-row: 1;
+    grid-column: 2;
+}
+.contact-box form label[for="message"] {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+}
+.contact-box form button {
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: end;
+    margin-top: 0;
+}
+
+.contact-box form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 0.3rem;
+}
+
+/* Responsive styles for tablet and phone */
+@media (max-width: 900px) {
+    body {
+        padding: 0;
+        margin: 0;
+        background: #fff;
+    }
+    .main-content, #about, #gallery, #events, #testimonials, #shop, #contact {
+        padding: 1.1rem 0.7rem 1.2rem 0.7rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto 1.2rem auto;
+        border-radius: 0.5rem;
+    }
+    .main-content > *, #about > *, #gallery > *, #events > *, #testimonials > *, #shop > *, #contact > * {
+        margin-bottom: 1.1rem;
+    }
+    p, li, label, input, textarea, .btn, .product p, .contact-info p {
+        text-align: left;
+        line-height: 1.5;
+        margin-bottom: 0.7em;
+        word-break: break-word;
+    }
+    .btn, button {
+        width: 100%;
+        max-width: 320px;
+        margin: 0.5em auto 0.5em auto;
+        display: block;
+    }
+    .gallery-grid .gallery {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .contact-info, .contact-box {
+        padding: 0.7rem 0.5rem;
+        border-radius: 0.4rem;
+        background: #f8f6f3;
+        margin-bottom: 1rem;
+    }
+    .contact-info p, .contact-info a {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+    .contact-info a.btn {
+        width: 100%;
+        margin: 0.5em 0 0 0;
+    }
+    .all-cate, .products, .story-con, .all-events, .testimonials {
+        gap: 1.2rem !important;
+    }
+    .story-con > *, .all-cate > *, .products > *, .all-events > *, .testimonials > * {
+        margin-bottom: 0.7rem;
+    }
+    .site-footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.95em;
+    }
+    /* Remove extra border radius for a cleaner mobile look */
+    .main-content, #about, #gallery, #events, #testimonials, #shop, #contact, .contact-info, .contact-box {
+        border-radius: 0.2rem;
+    }
+    /* Ensure no horizontal scroll */
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "hero"
+            "sidebar"
+            "favorites"
+            "main"
+            "footer";
+        gap: 0.5rem;
+    }
+    .site-header, .hero, .sidebar, .favorites, .main-content, .site-footer {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .nav-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+        margin-right: 0;
+        gap: 0.5rem;
+    }
+    .logo {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    .microscopy {
+        justify-content: center;
+        font-size: 0.95rem;
+        margin: 0.5rem 0 0 0;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+        gap: 1rem;
+        text-align: center;
+    }
+    .hero-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sidebar {
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+    .favorites {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    .all-cate, .products, .story-con, .all-events, .testimonials {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .product {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .all-contact {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0.5rem 0.5rem;
+    }
+    .contact-box {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .contact-box form {
+        grid-template-columns: 1fr;
+    }
+    .contact-box form label[for="name"],
+    .contact-box form label[for="email"],
+    .contact-box form label[for="message"] {
+        grid-column: 1 !important;
+    }
+    .contact-box form button {
+        grid-column: 1 !important;
+        justify-self: stretch;
+    }
+        h1, h2, h3 {
+            font-size: 1.25em;
+            margin-top: 0.7em;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+            word-break: break-word;
+            letter-spacing: 0.01em;
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.25em;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        body, p, li, a, label, input, textarea, button {
+            font-size: 1em;
+        }
+}
+
+
+
+
